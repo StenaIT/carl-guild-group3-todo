@@ -32,22 +32,24 @@ router.post('/add' ,function (req, res) {
 
 
 router.put('/edit_description' ,function (req, res) {
+  let {id, text} = req.body.todo;
   var result = todos.filter(function (todo) {
-    if(todo.id ==  req.body.todo.id)
-      todo.text =  req.body.todo.text;
+    if(todo.id ==  id)
+      todo.text =  text;
 
     return true;
   });
 
-  req.io.sockets.emit('todo:edit', { req.body.todo.id, req.body.todo.text });
+  req.io.sockets.emit('todo:edit', { id, text });
 
   res.status(201).json(result);
 });
 
 
 router.delete('/delete/:id' ,function (req, res) {
+  let id = req.params.id;
   var result = todos.filter(function (todo) {
-    return todo.id != req.params.id
+    return todo.id != id
   })
 
   todos = result;
@@ -55,22 +57,24 @@ router.delete('/delete/:id' ,function (req, res) {
   console.log('Todo list:');
   console.log(todos);
 
-  req.io.sockets.emit('todo:delete', { req.body.todo.id });
+  req.io.sockets.emit('todo:delete', { id });
 
   res.status(201).json(result);
 });
 
 router.put('/complete/toggle/:id' ,function (req, res) {
-  letr completed = false;
+  let completed = false;
+  let id = req.params.id;
+
   var result = todos.filter(function (todo) {
-    if(todo.id ==  req.params.id) {
+    if(todo.id ==  id) {
       completed = !todo.completed;
       todo.completed =  completed;
     }
     return true;
   });
 
-  req.io.sockets.emit('todo:complete', {req.params.id, completed});
+  req.io.sockets.emit('todo:complete', {id, completed});
 
   res.status(201).json(result);
 });
