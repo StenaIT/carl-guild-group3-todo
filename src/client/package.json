@@ -1,0 +1,56 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo app from group 3",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "jest": {
+    "verbose": true
+  },
+  "dependencies": {
+    "babel-jest": "^16.0.0",
+    "babel-plugin-transform-class-properties": "^6.16.0",
+    "classnames": "^2.2.5",
+    "jest": "^16.0.1",
+    "node-uuid": "^1.4.7",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-test-renderer": "^15.3.2",
+    "react-validator-prop-types": "^1.1.0",
+    "redux": "^3.6.0",
+    "socket.io": "^1.5.0",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-jest": "^16.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "enzyme": "^2.5.1",
+    "html-webpack-plugin": "^2.22.0",
+    "jest": "^16.0.1",
+    "jest-cli": "^16.0.1",
+    "react-addons-test-utils": "^15.3.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-test-renderer": "^15.3.2",
+    "webpack": "^1.13.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --display-error-details --config ./webpack.config.js --bail",
+    "start": "webpack-dev-server --hot"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "todo_server",
+  "version": "1.0.0",
+  "description": "Socket.io application that stores todo actions in an event store.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "carl-guild-group-3",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "config": "^1.21.0",
+    "express": "^4.14.0",
+    "express-list-routes": "^0.1.4",
+    "request-json": "^0.6.1",
+    "socket.io": "^1.5.0"
+  }
+}

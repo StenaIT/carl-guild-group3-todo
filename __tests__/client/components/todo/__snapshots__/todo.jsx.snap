@@ -1,0 +1,17 @@
+exports[`Todo Snapshot should render a view 1`] = `
+<div
+  className="view">
+  <input
+    checked={false}
+    className="toggle"
+    onChange={[Function]}
+    type="checkbox" />
+  <label
+    onDoubleClick={[Function]}>
+    View this todo
+  </label>
+  <button
+    className="trash"
+    onClick={[Function]} />
+</div>
+`;

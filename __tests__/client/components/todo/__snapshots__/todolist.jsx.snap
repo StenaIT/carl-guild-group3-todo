@@ -1,0 +1,50 @@
+exports[`TodoList Snapshot should render a view 1`] = `
+<div
+  className="todolist">
+  <div
+    className="view">
+    <input
+      checked={false}
+      className="toggle"
+      onChange={[Function]}
+      type="checkbox" />
+    <label
+      onDoubleClick={[Function]}>
+      Todo 1
+    </label>
+    <button
+      className="trash"
+      onClick={[Function]} />
+  </div>
+  <div
+    className="view">
+    <input
+      checked={true}
+      className="toggle"
+      onChange={[Function]}
+      type="checkbox" />
+    <label
+      onDoubleClick={[Function]}>
+      Todo 2
+    </label>
+    <button
+      className="trash"
+      onClick={[Function]} />
+  </div>
+  <div
+    className="view">
+    <input
+      checked={false}
+      className="toggle"
+      onChange={[Function]}
+      type="checkbox" />
+    <label
+      onDoubleClick={[Function]}>
+      Todo 3
+    </label>
+    <button
+      className="trash"
+      onClick={[Function]} />
+  </div>
+</div>
+`;
