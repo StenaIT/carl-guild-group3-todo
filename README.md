@@ -1,5 +1,9 @@
 # Todo App by carl-guild-group 3
 
+## Prerequisites
+Node.js and NPM must be installed.
+
+
 ## Client
 The client is a web gui that uses [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/) frameworks and the source is compiled with [Babel](https://babeljs.io/).
 
