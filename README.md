@@ -18,9 +18,9 @@ npm update
 This is still missing...
 
 ### What's left to be DONE
-Need to add a container for Client
-Need to add a container for Server
-Need to add a container for Database
+* Need to add a container for Client
+* Need to add a container for Server
+* Need to add a container for Database
 
 
 ## Client
