@@ -50,6 +50,7 @@ webpack-dev-server with hot reload is then used to runt the Single Page app.
 cd ./src/client
 npm start
 ```
+
 1. Will build everything that are needed for the deploy on a server  ./dist/*
 2. Load our develop environment at localhost:8080.
 3. Hot reload is active so you should only alter and save the '.jsx' file to see the change in web-browser.
@@ -103,13 +104,11 @@ Start the server on port 3009.
 ``` CMD/Bash
 cd ./src/server
 npm start
-``
+```
 
 > If you wish to change port number it can be done in 'default.json' **listenPort**
 
 > Trouble with a port use the cmd: **"netstat -o -n -a | findstr :3009"** to find which process that currently using the port.
-
-`
 
 Listen on REST Api:
 
