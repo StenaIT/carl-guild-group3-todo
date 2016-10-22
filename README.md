@@ -3,13 +3,13 @@
 ## Prerequisites
 Node.js and NPM must be installed.
 
-1. Get all node modules for the client.
+* Get all node modules for the client.
 ``` CMD/Bash
 cd './src/client'
 npm update
 ```
 
-2. Get all node modules for the server.
+* Get all node modules for the server.
 ``` CMD/Bash
 cd './src/server'
 npm update
