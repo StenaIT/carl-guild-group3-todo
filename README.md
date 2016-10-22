@@ -29,6 +29,9 @@ Tesing is done with [Jest](https://facebook.github.io/jest/) for snapshot testin
 * Write test for Main component.
 * Setup a css.
 * Use redux beacuse we are not using it right now.
+* [Optional] Add multiple todo lists.
+* [Optional] Add Offline functionallity.
+* [Optional] Add Undo functionallity, this should be easy if we successfully apply a CQRS pattern with eventstore on server side.
 
 
 #### Start client
