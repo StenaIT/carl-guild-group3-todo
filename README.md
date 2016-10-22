@@ -47,7 +47,7 @@ Webpack is used in conjunction with bable to parse '.jsx' files into '.js'.
 webpack-dev-server with hot reload is then used to runt the Single Page app.
 
 ``` CMD/Bash
-cd t./src/client
+cd ./src/client
 npm start
 ```
 1. Will build everything that are needed for the deploy on a server  ./dist/*
