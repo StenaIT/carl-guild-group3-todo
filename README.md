@@ -28,7 +28,7 @@ The client is a web gui that uses [React](https://facebook.github.io/react/), [R
 
 [Webpack](https://github.com/webpack/webpack) is utilized to automate Babel compiling and deploying.
 
-[Webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html) is used to server our Single Page App to clients.
+[Webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html) is used to publish our Single Page App to clients.
 
 Tesing is done with [Jest](https://facebook.github.io/jest/) for snapshot testing and [Enzyme](https://github.com/airbnb/enzyme) shallow testing on components.
 
