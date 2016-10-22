@@ -100,14 +100,16 @@ The server is a node.js server that utilize socket.io and express and store it i
 
 #### Start Server
 Start the server on port 3009.
+``` CMD/Bash
+cd ./src/server
+npm start
+``
+
 > If you wish to change port number it can be done in 'default.json' **listenPort**
 
 > Trouble with a port use the cmd: **"netstat -o -n -a | findstr :3009"** to find which process that currently using the port.
 
-``` CMD/Bash
-cd ./src/server
-npm start
-```
+`
 
 Listen on REST Api:
 
