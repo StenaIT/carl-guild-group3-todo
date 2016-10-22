@@ -54,8 +54,6 @@ Listen to Events on the socket.io Api:
 |todo:deleted                    |{id}                   | A todo task was deleted               |
 |todo:completed                  |{id, completed}        | A todo task was complete/uncompleted  |
 
-
-
 ``` CMD/Bash
 cd to this git '/todo/src/client' there todo is the root of this repo.
 npm start
@@ -72,7 +70,7 @@ npm start
 Webpack is used in conjunction with bable to parse '.jsx' files into '.js'.
 
 ``` CMD/Bash
-cd to this git '/todo/src/client' there todo is the root of this repo.
+cd ./src/client
 npm run build
 ```
 1. Will build everything that are needed for the deploy on a webserver  ./dist/*
@@ -80,7 +78,7 @@ npm run build
 #### Run tests
 Test are written with test suites Jest and Enzyme.
 ``` CMD/Bash
-cd to this git '/todo/src/client' there todo is the root of this repo.
+cd ./src/client
 npm test
 ```
 1. Will run snapshot tests.
@@ -96,7 +94,6 @@ The server is a node.js server that utilize socket.io and express and store it i
 * We need to look into [validator.js](https://www.npmjs.com/package/validator) to validate requests
 * We need XSS Sanitization, [xss-filters library](https://github.com/yahoo/xss-filters) or [DOMPurify](https://github.com/cure53/DOMPurify).
 * We need some db storage, [nodeCQRS](https://github.com/jamuhl/nodeCQRS).
-
 
 #### Start Server
 Start the server on port 3009.
@@ -128,6 +125,6 @@ Listen to Events on the socket.io Api:
 Emits events on the socket.io Api.
 
 ``` CMD/Bash
-cd to this git '/todo/src/server' there todo is the root of this repo.
+cd ./src/server
 npm start
 ```
