@@ -3,6 +3,18 @@
 ## Prerequisites
 Node.js and NPM must be installed.
 
+1. Get all node modules for the client.
+``` CMD/Bash
+cd './src/client'
+npm update
+```
+
+2. Get all node modules for the server.
+``` CMD/Bash
+cd './src/server'
+npm update
+```
+
 
 ## Client
 The client is a web gui that uses [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/) frameworks and the source is compiled with [Babel](https://babeljs.io/).
