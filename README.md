@@ -46,15 +46,6 @@ Tesing is done with [Jest](https://facebook.github.io/jest/) for snapshot testin
 Webpack is used in conjunction with bable to parse '.jsx' files into '.js'.
 webpack-dev-server with hot reload is then used to runt the Single Page app.
 
-Listen to Events on the socket.io Api:
-
-| Event                          |Request data           | Description                           |
-| ------------------------------ | --------------------- | ------------------------------------- |
-|todo:added                      |{id, text, completed}  | A todo was added                      |
-|todo:edited                     |{id, text}             | A todo has changed description        |
-|todo:deleted                    |{id}                   | A todo task was deleted               |
-|todo:completed                  |{id, completed}        | A todo task was complete/uncompleted  |
-
 ``` CMD/Bash
 cd to this git '/todo/src/client' there todo is the root of this repo.
 npm start
@@ -66,6 +57,15 @@ npm start
 > If you wish to change port number it can be done in webpack.config.js *clientPort*
 
 > Trouble with a port use the cmd: **"netstat -o -n -a | findstr :8080"** to find which process that currently using the port.
+
+Listen to Events on the socket.io Api:
+
+| Event                          |Request data           | Description                           |
+| ------------------------------ | --------------------- | ------------------------------------- |
+|todo:added                      |{id, text, completed}  | A todo was added                      |
+|todo:edited                     |{id, text}             | A todo has changed description        |
+|todo:deleted                    |{id}                   | A todo task was deleted               |
+|todo:completed                  |{id, completed}        | A todo task was complete/uncompleted  |
 
 #### Build
 Webpack is used in conjunction with bable to parse '.jsx' files into '.js'.
@@ -104,6 +104,11 @@ Start the server on port 3009.
 
 > Trouble with a port use the cmd: **"netstat -o -n -a | findstr :3009"** to find which process that currently using the port.
 
+``` CMD/Bash
+cd ./src/server
+npm start
+```
+
 Listen on REST Api:
 
 |Request type| Url                            | Description                           |Emit event      |
@@ -125,9 +130,4 @@ Listen to Events on the socket.io Api:
 |todo:delete                     |{id}                   | Delete a todo task                    | todo:deleted   |
 |todo:complete                   |{id, completed}        | Toggle todo task complete/uncompleted | todo:completed |
 
-Emits events on the socket.io Api.
 
-``` CMD/Bash
-cd ./src/server
-npm start
-```
