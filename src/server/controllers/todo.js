@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var config = require('config');
 var todo_db = require('../db/todo_db')
+var ClientEvents = require('../../common/client_events.jsx');
 
 console.log('\n  * Todo controller API:');
 
@@ -13,7 +14,7 @@ router.use(function timeLog(req, res, next) {
 
 router.get('/list',function (req, res) {
     var result = todo_db.todos();
-    res.status(201).json(result);
+    res.status(200).json(result);
 });
 
 router.post('/add' ,function (req, res) {
@@ -21,7 +22,7 @@ router.post('/add' ,function (req, res) {
 
   todo_db.add(todo);
 
-  req.io.emit('todo:added', todo);
+  req.io.emit(ClientEvents.TODO_ADDED, todo);
 
   res.status(201).json(todo_db.todos());
 });
@@ -31,10 +32,10 @@ router.put('/edit_description' ,function (req, res) {
   console.log(req.body);
   let {id, text} = req.body.todo;
 
-  todo_db.add(id,text);
-  req.io.sockets.emit('todo:edited', { id, text });
+  todo_db.edit({id,text});
+  req.io.sockets.emit(ClientEvents.TODO_EDITED, { id, text });
 
-  res.status(201).json(todo_db.get(id));
+  res.status(200).json(todo_db.get(id));
 });
 
 
@@ -43,9 +44,9 @@ router.delete('/delete/:id' ,function (req, res) {
   console.log(id);
   var result = todo_db.get(id);
   todo_db.delete(id);
-  req.io.sockets.emit('todo:deleted', { id });
+  req.io.sockets.emit(ClientEvents.TODO_DELETED, { id });
 
-  res.status(201).json(result);
+  res.status(200).json(result);
 });
 
 router.put('/complete/toggle/:id' ,function (req, res) {
@@ -55,9 +56,9 @@ router.put('/complete/toggle/:id' ,function (req, res) {
 
   todo_db.complete({id, completed: completed});
 
-  req.io.sockets.emit('todo:completed', {id, completed});
+  req.io.sockets.emit(ClientEvents.TODO_COMPLETED, {id, completed});
 
-  res.status(201).json(todo);
+  res.status(200).json(todo);
 });
 
 
