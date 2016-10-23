@@ -112,13 +112,24 @@ npm start
 
 Listen on REST Api:
 
-|Request type| Url                            | Description                           |Emit event      |
-| ---------- | ------------------------------ | ------------------------------------- | -------------- |
-|GET         |/api/v1/todo/list               | Get a list of todos                   |                |
-|POST        |/api/v1/todo/add                | Add a todo                            | todo:added     |
-|PUT         |/api/v1/todo/edit_description   | Edit a todo task description          | todo:edited    |
-|DELETE      |/api/v1/todo/delete/:id         | Delete a todo task                    | todo:deleted   |
-|PUT         |/api/v1/todo/complete/toggle/:id| Toggle todo task complete/uncompleted | todo:completed |
+|Request type| Url                            | Payload |Description                            |Emit event      |
+| ---------- | ------------------------------ | ------- | ------------------------------------- | -------------- |
+|GET         |/api/v1/todo/list               |         | Get a list of todos                   |                |
+|POST        |/api/v1/todo/add                | TODO    | Add a todo                            | todo:added     |
+|PUT         |/api/v1/todo/edit_description   | TODO    | Edit a todo task description          | todo:edited    |
+|DELETE      |/api/v1/todo/delete/:id         |         | Delete a todo task                    | todo:deleted   |
+|PUT         |/api/v1/todo/complete/toggle/:id|         | Toggle todo task complete/uncompleted | todo:completed |
+
+> TODO Payload:
+```
+{
+	"todo": {
+		"id": "cbc5731a-0107-43bb-a7fb-fb68182b8e67",
+		"text": "mille2",
+		"completed": false
+	}
+}
+```
 
 
 Listen to Events on the socket.io Api:
