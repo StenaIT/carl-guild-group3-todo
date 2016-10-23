@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TodoList from '../../../../src/client/components/todo/todolist.jsx';
+import TodoList from '../../../../components/todo/todolist.jsx';
 import {default as UUID} from "node-uuid";
 
 describe('TodoList', () => {

@@ -4,7 +4,7 @@
 //import renderer from 'react-test-renderer';
 //import {shallow} from 'enzyme';
 
-import Todo from '../../../../src/client/components/todo/todo.jsx';
+import Todo from '../../../../components/todo/todo.jsx';
 
 // We need to include resetmodules until React has released v15.4
 beforeEach(() => jest.resetModules());
