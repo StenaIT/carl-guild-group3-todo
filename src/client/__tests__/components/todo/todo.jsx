@@ -4,7 +4,7 @@
 //import renderer from 'react-test-renderer';
 //import {shallow} from 'enzyme';
 
-import Todo from '../../../../components/todo/todo.jsx';
+import Todo from '../../../components/todo/todo.jsx';
 
 // We need to include resetmodules until React has released v15.4
 beforeEach(() => jest.resetModules());
@@ -35,7 +35,7 @@ describe('Todo', () => {
 
   describe('Component', () => {
     // We use our consle.warn to throw instead of output it to console.
-    require('../../../../setupTestFramework.js')
+    require('../../../setupTestFramework.js')
 
     it('should warn when missing todo data', () => {
       const React = require( 'react');
