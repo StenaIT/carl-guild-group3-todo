@@ -12,6 +12,7 @@ class Main extends React.Component {
 
   componentDidMount = () => {
     console.log('componentDidMount');
+
     this.socket = io({path: '/sioapi' });
     this.socket.on('connect', this._connected );
     this.socket.on('todo:list', this._todosUpdated );
@@ -21,85 +22,86 @@ class Main extends React.Component {
     this.socket.on('todo:completed', this._todoCompleted);
   }
 
-_connected = () => {
-  console.log('socket.io is now connected');
-}
+  _connected = () => {
+    console.log('socket.io is now connected');
+  }
 
-_todosUpdated = data => {
-  console.log('_todosUpdated');
+  _todosUpdated = data => {
+    console.log('_todosUpdated');
 
-  let self = this;
-  let todoList = data.map(function(item) {
+    let self = this;
+    let todoList = data.map(function(item) {
+      let t = {
+        todo: item,
+        editTodo: self.handleEdit,
+        deleteTodo:  self.handleDelete,
+        completeTodo:  self.handleComplete
+      }
+      return t;
+    });
+    this.setState({ todos: todoList })
+  }
+
+  _todoAdded = todo => {
+    console.log('_todoAdded ' + todo.id);
+
+    let self = this;
     let t = {
-      todo: item,
+      todo: todo,
       editTodo: self.handleEdit,
       deleteTodo:  self.handleDelete,
       completeTodo:  self.handleComplete
     }
-    return t;
-  });
-  this.setState({ todos: todoList })
-}
 
-_todoAdded = todo => {
-  console.log('_todoAdded');
-
-  let self = this;
-  let t = {
-    todo: todo,
-    editTodo: self.handleEdit,
-    deleteTodo:  self.handleDelete,
-    completeTodo:  self.handleComplete
+    this.state.todos.push(t);
+    this.setState({ todo: this.state.todos })
   }
 
-  this.state.todos.push(t);
-  this.setState({ todo: this.state.todos })
-}
+  _todoDeleted = data => {
+    let {id}= data
+    console.log('_todoDeleted ' + id);
 
-_todoDeleted = data => {
-  let {id}= data
-  console.log('_todoDeleted ' + id);
+    let self = this;
 
-  let self = this;
+    let l = this.state.todos.filter(function (todo) {
+      return todo.todo.id != id
+    })
 
-  let l = this.state.todos.filter(function (todo) {
-    return todo.todo.id != id
-  })
+    console.log(l);
 
-  console.log(l);
+    this.setState({ todos: l });
+  }
 
-  this.setState({ todos: l });
-}
+  _todoEdited = data => {
+    let {id,text} = data
+    console.log('_todoEdited ' + id);
 
-_todoEdited = data => {
-  console.log('_todoEdited ');
-  let {id,text} = data
+    let l = this.state.todos.filter(function (todo) {
+      if(todo.todo.id == id) {
+        todo.todo.text = text;
+      }
+      return true;
+    })
 
-  let l = this.state.todos.filter(function (todo) {
-    if(todo.todo.id == id) {
-      todo.todo.text = text;
-    }
-    return true;
-  })
+    this.setState({ todos: l });
 
-  this.setState({ todos: l });
+  }
 
-}
+  _todoCompleted = data => {
+    let {id,completed} = data
+    console.log('_todoCompleted ' +id);
 
-_todoCompleted = data => {
-  console.log('_todoCompleted ');
-  let {id,completed} = data
-  let self = this;
+    let self = this;
 
-  let l = this.state.todos.filter(function (todo) {
-    if(todo.todo.id == id) {
-      todo.todo.completed = completed;
-    }
-    return true;
-  })
+    let l = this.state.todos.filter(function (todo) {
+      if(todo.todo.id == id) {
+        todo.todo.completed = completed;
+      }
+      return true;
+    })
 
-  this.setState({ todos: l });
-}
+    this.setState({ todos: l });
+  }
 
   handleAdd = text => {
     if (text.length !== 0) {
