@@ -78,7 +78,7 @@ describe('Todo', () => {
       }
 
       const todo = shallow(<Todo {...edit} />);
-      expect(todo.text()).toEqual('Edit this todo');
+      expect(todo.find('label').text()).toEqual('Edit this todo');
 
       todo.find('label').simulate('doubleclick');
       expect(todo.state('editing')).toEqual(true);
