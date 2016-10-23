@@ -10,34 +10,24 @@ class Main extends React.Component {
     todos: []
   }
 
-  //  static propTypes = {
-  //    addTodo: PropTypes.func.isRequired
-  //  }
-
-  socket = () => {
-    let socket = io({path: '/sioapi' });
-    return socket;
-  }
-
   componentDidMount = () => {
     console.log('componentDidMount');
-    let self = this;
-
-    this.socket().on('connect', this._connected );;
-
-    self.socket().on('todo:list', this._todosUpdated );
-    self.socket().on('todo:added', this._todoAdded);
-    self.socket().on('todo:deleted', this._todoDeleted);
-    self.socket().on('todo:edited', this._todoEdited);
-    self.socket().on('todo:completed', this._todoCompleted);
+    this.socket = io({path: '/sioapi' });
+    this.socket.on('connect', this._connected );
+    this.socket.on('todo:list', this._todosUpdated );
+    this.socket.on('todo:added', this._todoAdded);
+    this.socket.on('todo:deleted', this._todoDeleted);
+    this.socket.on('todo:edited', this._todoEdited);
+    this.socket.on('todo:completed', this._todoCompleted);
   }
 
 _connected = () => {
-  console.log('connected');
+  console.log('socket.io is now connected');
 }
 
 _todosUpdated = data => {
   console.log('_todosUpdated');
+
   let self = this;
   let todoList = data.map(function(item) {
     let t = {
@@ -53,10 +43,6 @@ _todosUpdated = data => {
 
 _todoAdded = todo => {
   console.log('_todoAdded');
-
-  //socket.broadcast.emit seams like it sending back to client even if it should not!
-  if(this.state.todos.filter((item) => {return item.todo.id == todo.id} ).length > 0)
-    return;
 
   let self = this;
   let t = {
@@ -124,25 +110,25 @@ _todoCompleted = data => {
       }
 
       this._todoAdded(todo);
-      this.socket().emit('todo:add', todo);
+      this.socket.emit('todo:add', todo);
     }
   }
 
   handleEdit = (id,text) => {
     this._todoEdited({id,text})
-    this.socket().emit('todo:edit', {id,text});
+    this.socket.emit('todo:edit', {id,text});
   }
 
   handleDelete = (id) => {
     this._todoDeleted({id});
-    this.socket().emit('todo:delete', {id});
+    this.socket.emit('todo:delete', {id});
   }
 
   handleComplete = (data) => {
     let {id,completed} = data
     completed = !completed;
     this._todoCompleted({id,completed});
-    this.socket().emit('todo:complete', {id, completed});
+    this.socket.emit('todo:complete', {id, completed});
   }
 
   render() {
