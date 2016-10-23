@@ -4,6 +4,8 @@ import TodoList from './todo/todolist.jsx';
 import TodoEdit from './todo/todo_edit.jsx';
 import {default as UUID} from "node-uuid";
 import io from 'socket.io-client/socket.io';
+import * as ClientEvents from '../../common/client_events.jsx';
+import * as ServerEvents from '../../common/server_events.jsx';
 
 class Main extends React.Component {
   state = {
@@ -15,11 +17,11 @@ class Main extends React.Component {
 
     this.socket = io({path: '/sioapi' });
     this.socket.on('connect', this._connected );
-    this.socket.on('todo:list', this._todosUpdated );
-    this.socket.on('todo:added', this._todoAdded);
-    this.socket.on('todo:deleted', this._todoDeleted);
-    this.socket.on('todo:edited', this._todoEdited);
-    this.socket.on('todo:completed', this._todoCompleted);
+    this.socket.on(ClientEvents.TODO_LIST, this._todosUpdated );
+    this.socket.on(ClientEvents.TODO_ADDED, this._todoAdded);
+    this.socket.on(ClientEvents.TODO_DELETED, this._todoDeleted);
+    this.socket.on(ClientEvents.TODO_EDITED, this._todoEdited);
+    this.socket.on(ClientEvents.TODO_COMPLETED, this._todoCompleted);
   }
 
   _connected = () => {
@@ -112,25 +114,25 @@ class Main extends React.Component {
       }
 
       this._todoAdded(todo);
-      this.socket.emit('todo:add', todo);
+      this.socket.emit(ServerEvents.TODO_ADD, todo);
     }
   }
 
   handleEdit = (id,text) => {
     this._todoEdited({id,text})
-    this.socket.emit('todo:edit', {id,text});
+    this.socket.emit(ServerEvents.TODO_EDIT, {id,text});
   }
 
   handleDelete = (id) => {
     this._todoDeleted({id});
-    this.socket.emit('todo:delete', {id});
+    this.socket.emit(ServerEvents.TODO_DELETE, {id});
   }
 
   handleComplete = (data) => {
     let {id,completed} = data
     completed = !completed;
     this._todoCompleted({id,completed});
-    this.socket.emit('todo:complete', {id, completed});
+    this.socket.emit(ServerEvents.TODO_COMPLETE, {id, completed});
   }
 
   render() {

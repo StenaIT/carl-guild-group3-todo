@@ -36,7 +36,7 @@ Tesing is done with [Jest](https://facebook.github.io/jest/) for snapshot testin
 * Write test for Main component.
 * Setup a css.
 * Use redux beacuse we are not using it right now.
-* Put the Events in a file with constants that can be shared between client/server.
+* ~~Put the Events in a file with constants that can be shared between client/server.~~
 * [Optional] Add multiple todo lists.
 * [Optional] Add Offline functionallity.
 * [Optional] Add Undo functionallity, this should be easy if we successfully apply a CQRS pattern with eventstore on server side.
@@ -93,7 +93,7 @@ The server is a node.js server that utilize socket.io and express and store it i
 ### What's left to be DONE
 * ~~We need to check out why socket.io  broadcast.emit  also emits event to sender.~~
 * Write test for api.
-* Put the Events in a file with constants that can be shared between client/server.
+* ~~Put the Events in a file with constants that can be shared between client/server.~~
 * ~~Move the Event listeners into its own component.~~
 * We need to look into [validator.js](https://www.npmjs.com/package/validator) to validate requests
 * We need XSS Sanitization, [xss-filters library](https://github.com/yahoo/xss-filters) or [DOMPurify](https://github.com/cure53/DOMPurify).
