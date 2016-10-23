@@ -89,7 +89,7 @@ class Main extends React.Component {
 
   _todoCompleted = data => {
     let {id,completed} = data
-    console.log('_todoCompleted ' +id);
+    console.log('_todoCompleted ' +id + ' ' + completed) ;
 
     let self = this;
 
