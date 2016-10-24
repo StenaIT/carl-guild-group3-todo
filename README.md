@@ -1,4 +1,8 @@
 # Todo App by carl-guild-group 3
+<img src="https://cloud.githubusercontent.com/assets/16755871/19643077/acc71af2-99e8-11e6-828a-021c2fe02e24.png" width="100" height="125" title="Todo App"/>
+<img src="https://cloud.githubusercontent.com/assets/16755871/19643351/1fcd61b8-99ea-11e6-8159-bb67ee1d50f6.png" width="100" height="125" title="Server"/>
+<img src="https://cloud.githubusercontent.com/assets/16755871/19643394/6019084e-99ea-11e6-9e50-bb198e6637d2.png" width="100" height="125" title="Web Server"/>
+
 
 ## Prerequisites
 Node.js and NPM must be installed.
