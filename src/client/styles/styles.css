@@ -1,0 +1,57 @@
+input.edit,
+input.new-todo {
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-size: 150%;
+  text-transform: uppercase;
+  width: 350px;
+  margin: 3px
+}
+
+button.trash {
+  height: 30px;
+  width: 30px;
+  margin: 3px 3px 0px 10px;
+  padding: 2px;
+  border: none;
+  background:url(/images/trash_104.png) no-repeat;
+  background-size:  cover;
+}
+
+button.trash {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+button.trash:hover {
+  background:url(/images/trash_104_hover.png) no-repeat;
+  background-size:  cover;
+  padding: 2px;
+  color: black;
+  border: none;
+}
+input[type=checkbox] {
+  height: 30px;
+  width: 30px;
+  margin: 5px 5px 0px 5px;
+  padding: 2px;
+  border: none;
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+
+  background:url(/images/unchecked.png) no-repeat;
+  background-size:  cover;
+}
+
+input[type=checkbox]:checked {
+  height: 30px;
+  width: 30px;
+  padding: 2px;
+  border: none;
+  background:url(/images/checked.png) no-repeat;
+  background-size:  cover;
+}
+
+label {
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-size: 210%;
+  text-transform: uppercase;
+}

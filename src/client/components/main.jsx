@@ -6,6 +6,7 @@ import {default as UUID} from "node-uuid";
 import io from 'socket.io-client/socket.io';
 import * as ClientEvents from '../../common/client_events.jsx';
 import * as ServerEvents from '../../common/server_events.jsx';
+require("../styles/styles.css");
 
 class Main extends React.Component {
   state = {

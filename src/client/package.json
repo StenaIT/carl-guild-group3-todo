@@ -39,13 +39,16 @@
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015-webpack": "^6.4.3",
     "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
     "enzyme": "^2.5.1",
     "html-webpack-plugin": "^2.22.0",
+    "image-webpack-loader": "^3.0.0",
     "jest": "^16.0.1",
     "jest-cli": "^16.0.1",
     "react-addons-test-utils": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-test-renderer": "^15.3.2",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   },
   "scripts": {
