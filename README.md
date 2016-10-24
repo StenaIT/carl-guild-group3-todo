@@ -34,7 +34,7 @@ Tesing is done with [Jest](https://facebook.github.io/jest/) for snapshot testin
 
 ### What's left to be DONE
 * Write test for Main component.
-* Setup a css.
+* ~~Setup a css.~~
 * Use redux beacuse we are not using it right now.
 * ~~Put the Events in a file with constants that can be shared between client/server.~~
 * [Optional] Add multiple todo lists.
@@ -112,15 +112,15 @@ npm start
 
 Listen on REST Api:
 
-|Request type| Url                            | Payload |Description                            |Emit event      |
-| ---------- | ------------------------------ | ------- | ------------------------------------- | -------------- |
-|GET         |/api/v1/todo/list               |         | Get a list of todos                   |                |
-|POST        |/api/v1/todo/add                | TODO    | Add a todo                            | todo:added     |
-|PUT         |/api/v1/todo/edit_description   | TODO    | Edit a todo task description          | todo:edited    |
-|DELETE      |/api/v1/todo/delete/:id         |         | Delete a todo task                    | todo:deleted   |
-|PUT         |/api/v1/todo/complete/toggle/:id|         | Toggle todo task complete/uncompleted | todo:completed |
+|Request | Url                            | Req |Resp|Description                            |Emit event      |
+| ------ | ------------------------------ | --- |--- | ------------------------------------- | -------------- |
+|GET     |/api/v1/todo/list               |     | 200| Get a list of todos                   |                |
+|POST    |/api/v1/todo/add                |*TODO| 201| Add a todo                            | todo:added     |
+|PUT     |/api/v1/todo/edit_description   |*TODO| 200| Edit a todo task description          | todo:edited    |
+|DELETE  |/api/v1/todo/delete/:id         |     | 200| Delete a todo task                    | todo:deleted   |
+|PUT     |/api/v1/todo/complete/toggle/:id|     | 200| Toggle todo task complete/uncompleted | todo:completed |
 
-> TODO Payload:
+> *TODO Request Payload:
 ```
 {
 	"todo": {
