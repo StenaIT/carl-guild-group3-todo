@@ -1,4 +1,5 @@
 # Todo App by carl-guild-group 3
+![Image of TodoApp](https://cloud.githubusercontent.com/assets/16755871/19643077/acc71af2-99e8-11e6-828a-021c2fe02e24.png)
 
 ## Prerequisites
 Node.js and NPM must be installed.
