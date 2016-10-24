@@ -34,7 +34,7 @@ Tesing is done with [Jest](https://facebook.github.io/jest/) for snapshot testin
 
 ### What's left to be DONE
 * Write test for Main component.
-* Setup a css.
+* ~~Setup a css.~~
 * Use redux beacuse we are not using it right now.
 * ~~Put the Events in a file with constants that can be shared between client/server.~~
 * [Optional] Add multiple todo lists.
