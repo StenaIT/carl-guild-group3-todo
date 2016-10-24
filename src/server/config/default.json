@@ -4,5 +4,6 @@
   "apiUrl": "/api/v1/",
   "routs": {
     "todo": "todo"
-  }
+  },
+  "loggingActive": true 
 }

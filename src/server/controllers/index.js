@@ -1,10 +1,14 @@
+var todoController = require('./todo');
+
 var express = require('express');
-var router = express.Router();
-var routs = require('config').get('routs');
+var config = require('config');
 
 console.log('Loading controllers:');
 // DEFINE ALL controllers here
-router.use('/' + routs.get('todo'), require('./todo').router);
+module.exports = function(app) {
+  var router = express.Router();
+  var routs = config.get('routs');
 
-
-module.exports = router;
+  router = todoController(app, config.get('apiUrl'), router, config.get('loggingActive'));
+  return router;
+}

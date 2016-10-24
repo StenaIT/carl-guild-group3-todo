@@ -12,6 +12,7 @@ module.exports = {
     devServer: {
       inline:true,
       port: clientPort,
+      host: '0.0.0.0',
       proxy: {
             '/sioapi/*': {
                 target: 'ws://localhost:' + socketioPort,

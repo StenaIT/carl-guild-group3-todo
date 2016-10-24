@@ -4,7 +4,7 @@
   "description": "Socket.io application that stores todo actions in an event store.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "carl-guild-group-3",
   "license": "ISC",
@@ -15,5 +15,12 @@
     "express-list-routes": "^0.1.4",
     "request-json": "^0.6.1",
     "socket.io": "^1.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "proxyquire": "^1.7.10",
+    "sinon": "^1.17.6",
+    "supertest": "^2.0.1"
   }
 }
