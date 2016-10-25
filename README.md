@@ -1,7 +1,7 @@
 # Todo App by carl-guild-group 3
-<img src="https://cloud.githubusercontent.com/assets/16755871/19643077/acc71af2-99e8-11e6-828a-021c2fe02e24.png" width="100" height="125" title="Todo App"/>
-<img src="https://cloud.githubusercontent.com/assets/16755871/19643351/1fcd61b8-99ea-11e6-8159-bb67ee1d50f6.png" width="100" height="125" title="Server"/>
-<img src="https://cloud.githubusercontent.com/assets/16755871/19643394/6019084e-99ea-11e6-9e50-bb198e6637d2.png" width="100" height="125" title="Web Server"/>
+<img src="https://cloud.githubusercontent.com/assets/16755871/19643077/acc71af2-99e8-11e6-828a-021c2fe02e24.png" width="100px" height="125px" title="Todo App"/>
+<img src="https://cloud.githubusercontent.com/assets/16755871/19643351/1fcd61b8-99ea-11e6-8159-bb67ee1d50f6.png" width="100px" height="125px" title="Server"/>
+<img src="https://cloud.githubusercontent.com/assets/16755871/19643394/6019084e-99ea-11e6-9e50-bb198e6637d2.png" width="100px" height="125px" title="Web Server"/>
 
 
 ## Prerequisites
@@ -18,6 +18,20 @@ npm update
 cd ./src/server
 npm update
 ```
+
+### Setup environment variables
+**TODO_CLIENT_PORT** if not set default to **8081**.
+
+**TODO_CLIENT_IP** if not set default to **localhost**.
+
+**TODO_SERVER_PORT** if not set default to **3009**.
+
+**TODO_SERVER_IP** f not set default to **localhost**.
+
+> This can be useful for docker images.
+
+<img src="https://cloud.githubusercontent.com/assets/16755871/19702377/9bb1c04c-9aff-11e6-8163-f4f69dccf4ce.png" width="120px" height="150px" title="Example"/>
+
 ## Docker constainers
 This is still missing...
 
