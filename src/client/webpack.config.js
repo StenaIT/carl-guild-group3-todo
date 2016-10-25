@@ -18,7 +18,9 @@ module.exports = {
       proxy: {
             '/sioapi/*': {
                 target: 'ws://' + serverIP + ':' + serverPort,
-                ws: true
+                ws: true,
+                xfwd: true,
+                logLevel: 'debug'
             }
       }
     },

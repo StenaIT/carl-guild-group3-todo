@@ -39,7 +39,8 @@ module.exports = ( http) =>  {
   };
 
   io.on('connection', function (socket) {
-      let ip =  socket.request.connection.remoteAddress;
+      //let ip =  socket.request.connection.remoteAddress;
+      var ip = socket.request.headers['x-forwarded-for'] || socket.request.connection.remoteAddress;
       console.log('[CONNECT] socket.io client IP:"' + ip + '"');
       // Send the current todo list
       socket.emit(ClientEvents.TODO_LIST, todo_db.todos());
