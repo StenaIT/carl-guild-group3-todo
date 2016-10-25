@@ -5,7 +5,7 @@ module.exports = ( http) =>  {
   var ServerEvents = require('../../common/server_events.jsx');
 
   function _add(todo) {
-    console.log('todo:add');
+    console.log('todo:add - IP:'+ getIp(this));
 
     todo_db.add(todo);
     this.broadcast.emit(ClientEvents.TODO_ADDED, todo);
@@ -14,14 +14,14 @@ module.exports = ( http) =>  {
   function _delete(data) {
     let {id} = data;
 
-    console.log('todo:delete');
+    console.log('todo:delete - IP:'+ getIp(this));
 
     todo_db.delete(id);
     this.broadcast.emit(ClientEvents.TODO_DELETED, {id} );
   };
 
   function _complete(data) {
-    console.log('todo:complete');
+    console.log('todo:complete - IP:' + getIp(this));
 
     let {id,completed} = data;
 
@@ -30,7 +30,7 @@ module.exports = ( http) =>  {
   }
 
   function _edit(data) {
-    console.log('todo:edit');
+    console.log('todo:edit - IP:' + getIp(this));
 
     let {id, text} = data;
 
@@ -38,9 +38,14 @@ module.exports = ( http) =>  {
     this.broadcast.emit(ClientEvents.TODO_EDITED, {id,text} );
   };
 
+  function getIp(socket) {
+    var ip = socket.request.headers['x-forwarded-for'] || socket.request.connection.remoteAddress;
+    return ip;
+  }
+
   io.on('connection', function (socket) {
       //let ip =  socket.request.connection.remoteAddress;
-      var ip = socket.request.headers['x-forwarded-for'] || socket.request.connection.remoteAddress;
+      var ip = getIp(socket);
       console.log('[CONNECT] socket.io client IP:"' + ip + '"');
       // Send the current todo list
       socket.emit(ClientEvents.TODO_LIST, todo_db.todos());
