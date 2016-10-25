@@ -19,19 +19,6 @@ cd ./src/server
 npm update
 ```
 
-### Setup environment variables
-**TODO_CLIENT_PORT** if not set default to **8081**.
-
-**TODO_CLIENT_IP** if not set default to **localhost**.
-
-**TODO_SERVER_PORT** if not set default to **3009**.
-
-**TODO_SERVER_IP** f not set default to **localhost**.
-
-> This can be useful for docker images.
-
-<img src="https://cloud.githubusercontent.com/assets/16755871/19702377/9bb1c04c-9aff-11e6-8163-f4f69dccf4ce.png" width="120px" height="150px" title="Example"/>
-
 ## Docker constainers
 This is still missing...
 
@@ -58,6 +45,19 @@ Tesing is done with [Jest](https://facebook.github.io/jest/) for snapshot testin
 * [Optional] Add multiple todo lists.
 * [Optional] Add Offline functionallity.
 * [Optional] Add Undo functionallity, this should be easy if we successfully apply a CQRS pattern with eventstore on server side.
+
+### Setup environment variables
+**TODO_CLIENT_PORT** if not set default to **8081**.
+
+**TODO_CLIENT_IP** if not set default to **localhost**.
+
+**TODO_SERVER_PORT** if not set default to **3009**.
+
+**TODO_SERVER_IP** f not set default to **localhost**.
+
+> This can be useful for docker images.
+
+<img src="https://cloud.githubusercontent.com/assets/16755871/19702377/9bb1c04c-9aff-11e6-8163-f4f69dccf4ce.png" width="120px" height="150px" title="Example"/>
 
 
 #### Start client
