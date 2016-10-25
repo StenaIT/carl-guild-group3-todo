@@ -4,7 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var clientPort = '8080';
+var clientPort = '8081';
 var socketioPort = '3009'
 
 module.exports = {
