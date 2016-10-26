@@ -29,7 +29,7 @@ class Todo extends React.Component {
 
   // Syntax made possible with babel plugin "transform-class-properties"
   // We dont need to bind htis  in the constructor any more to be able to use it
-  handleDoubleClick = () => {
+  handleClick = () => {
     this.setState({ editing: true })
   }
 
@@ -62,7 +62,7 @@ class Todo extends React.Component {
               type="checkbox"
               checked={todo.completed}
               onChange={() => completeTodo(todo)} />
-            <label onDoubleClick={this.handleDoubleClick}>
+            <label onClick={this.handleClick}>
               {todo.text}
             </label>
             <button
