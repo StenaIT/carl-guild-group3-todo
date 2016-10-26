@@ -20,7 +20,18 @@ npm update
 ```
 
 ## Docker constainers
-This is still missing...
+# Run the following from the root folder.
+Create network:
+docker network create --driver bridge carlos
+
+Build images:
+docker build -f ./src/Dockerfile_client -t client ./src
+docker build -f ./src/Dockerfile_server -t server ./src
+
+Run containers:
+docker-compose up -d
+
+Browse to localhost:8081
 
 ### What's left to be DONE
 * Need to add a container for Client

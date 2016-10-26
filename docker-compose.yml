@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  client:
+    image: client
+    container_name: client
+    environment:
+      TODO_SERVER_IP: server
+    networks:
+      - carlos
+    ports:
+      - "8081:8081"
+    links:
+      - "server:server"
+  server:
+    image: server
+    container_name: server
+    networks:
+      - carlos
+networks:
+  carlos:
+    external:
+      name: carlos

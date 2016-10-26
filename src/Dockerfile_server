@@ -1,0 +1,9 @@
+FROM node
+RUN mkdir -p /usr/src/
+COPY . /usr/src/
+WORKDIR /usr/src/server
+
+RUN npm install
+
+EXPOSE 3009
+CMD [ "npm", "start" ]
