@@ -20,23 +20,28 @@ npm update
 ```
 
 ## Docker constainers
-# Run the following from the root folder.
+### Run the following from the root folder.
 Create network:
+``` CMD/Bash
 docker network create --driver bridge carlos
+```
 
 Build images:
+``` CMD/Bash
 docker build -f ./src/Dockerfile_client -t client ./src
 docker build -f ./src/Dockerfile_server -t server ./src
+```
 
 Run containers:
+``` CMD/Bash
 docker-compose up -d
+```
 
 Browse to localhost:8081
 
 ### What's left to be DONE
-* Need to add a container for Client
-* Need to add a container for Server
-* Need to add a container for Database
+* ~~Need to add a container for Client~~
+* ~~Need to add a container for Server~~
 
 
 ## Client
