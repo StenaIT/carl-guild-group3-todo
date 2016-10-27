@@ -10,13 +10,13 @@ Node.js and NPM must be installed.
 * Get all node modules for the client.
 ``` CMD/Bash
 cd ./src/client
-npm update
+npm upgrade
 ```
 
 * Get all node modules for the server.
 ``` CMD/Bash
 cd ./src/server
-npm update
+npm upgrade
 ```
 
 ## Docker constainers
