@@ -5,7 +5,7 @@
 
 
 ## Prerequisites
-Node.js and NPM must be installed.
+Node.js and NPM v6.9.1 LTS must be installed.
 
 * Get all node modules for the client.
 ``` CMD/Bash
