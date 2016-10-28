@@ -150,26 +150,27 @@ label.checked_true {
   }
 
   .todoHeader {
-    font-size:55px;
+  /*  font-size:55px;
     padding: 30px;
+*/
   }
   input.edit,
   input.new-todo {
     width: 100%;
-    padding: 63px 20px;
+  /*  padding: 63px 20px;
 
-font-size:42px;
-    margin: 0;
+font-size:21px;
+*/    margin: 0;
 
   }
   label {
-    font-size:40px;
-    padding: 40px;
-    margin: 0;
+  /*  font-size:20px;
+    padding: 20px;
+  */  margin: 0;
         max-width: none;
 
   }
-  input[type="checkbox"] {
+  /*input[type="checkbox"] {
     width: 60px;
     height: 60px;
     margin: 32px 20px 20px 30px;
@@ -186,5 +187,5 @@ font-size:42px;
       height: 60px;
       width: 60px;
       margin: 32px 30px;
-    }
+    }*/
 }
