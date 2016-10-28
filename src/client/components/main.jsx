@@ -139,6 +139,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className='main'>
+      <div className='todoHeader'>:: todolist ::</div>
         <TodoEdit newTodo
                   onSave={this.handleAdd}
                   placeholder="Add Todo" />

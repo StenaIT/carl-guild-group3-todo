@@ -62,7 +62,7 @@ class Todo extends React.Component {
               type="checkbox"
               checked={todo.completed}
               onChange={() => completeTodo(todo)} />
-            <label onClick={this.handleClick}>
+            <label onClick={this.handleClick} className={"checked_" + todo.completed}>
               {todo.text}
             </label>
             <button

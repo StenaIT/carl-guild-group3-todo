@@ -1,16 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+body, html {
+  height:100%;
+      background-image: linear-gradient(to right top, #2c3e50 0%, #34495e 100%);
+
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+}
+.main {
+      background-image: linear-gradient(to right top, #ecf0f1 0%, #FFF 100%);
+    margin-top: 20px;
+        border-radius: 5px;
+        width: 350px;
+        padding-bottom: 50px;
+            box-shadow: -5px 9px 15px rgba(0,0,0,0.3);
+}
+.todoHeader {
+    background-image: linear-gradient(to right top, #2980b9 0%, #3498db 100%);
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20pt;
+    text-shadow: -1px -1px 0 #20618c;
+    border-radius: 5px 5px 0 0;
+
+    font-family: "Helvetica", "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+}
+
 input.edit,
 input.new-todo {
-  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
-  font-size: 150%;
-  text-transform: uppercase;
-  width: 350px;
-  margin: 3px
+  font-family: "Helvetica", "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-size: 14pt;
+
+  width: 90%;
+  margin: 15px;
+  height: 44px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: -1px -1px 0 rgba(0,0,0,0.2);
+}
+input.edit {
+
+margin: 0 15px 0 56px;
+height:52px;
+width: 250px;
+padding: 0 15px;
+
+
 }
 
 button.trash {
   height: 30px;
   width: 30px;
-  margin: 3px 3px 0px 10px;
+    margin: 10px;
   padding: 2px;
   border: none;
   background:url(/images/trash_104.png) no-repeat;
@@ -21,6 +69,10 @@ button.trash {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
+button.trash:focus{
+    outline:0;
+
+}
 
 button.trash:hover {
   background:url(/images/trash_104_hover.png) no-repeat;
@@ -29,16 +81,21 @@ button.trash:hover {
   color: black;
   border: none;
 }
+input[type=checkbox]:focus{
+    outline:0;
+
+}
 input[type=checkbox] {
   height: 30px;
   width: 30px;
-  margin: 5px 5px 0px 5px;
+    margin: 10px 10px 10px 15px;
   padding: 2px;
   border: none;
   appearance:none; -webkit-appearance:none; -moz-appearance:none;
 
   background:url(/images/unchecked.png) no-repeat;
   background-size:  cover;
+  float: left;
 }
 
 input[type=checkbox]:checked {
@@ -51,7 +108,83 @@ input[type=checkbox]:checked {
 }
 
 label {
-  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
-  font-size: 210%;
-  text-transform: uppercase;
+  font-family: "Georgia", Times, serif;
+      color: #2c3e50;
+      font-weight: 100;
+      font-size: 14pt;
+      display: block;
+      float: left;
+
+      padding: 15px;
+      flex-grow: 2;
+      max-width: 250px;
+      border-left: 1px solid rgba(255, 0, 0, 0.15);
+
+}
+label.checked_true {
+  text-decoration: line-through;
+  color:#95a5a6;
+}
+
+.todolist .view {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+    margin-top: -1px;
+
+    justify-content: flex-start;
+  width: 100%;
+  display: flex;
+}
+
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .main {
+    width: 100%;
+    margin-top: 0;
+        box-shadow: none;
+  }
+
+  .todoHeader {
+    font-size:55px;
+    padding: 30px;
+  }
+  input.edit,
+  input.new-todo {
+    width: 100%;
+    padding: 63px 20px;
+
+font-size:42px;
+    margin: 0;
+
+  }
+  label {
+    font-size:40px;
+    padding: 40px;
+    margin: 0;
+        max-width: none;
+
+  }
+  input[type="checkbox"] {
+    width: 60px;
+    height: 60px;
+    margin: 32px 20px 20px 30px;
+  }
+  input[type=checkbox]:checked {
+    width: 60px;
+    height: 60px;
+    margin: 32px 20px 20px 30px;
+  }
+
+
+
+  button.trash {
+      height: 60px;
+      width: 60px;
+      margin: 32px 30px;
+    }
 }
