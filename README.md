@@ -1,5 +1,5 @@
 # Todo App by carl-guild-group 3
-<img src="https://cloud.githubusercontent.com/assets/16755871/19643077/acc71af2-99e8-11e6-828a-021c2fe02e24.png" width="100px" height="125px" title="Todo App"/>
+<img src="https://cloud.githubusercontent.com/assets/16755871/19798617/72020ba4-9cf2-11e6-81ca-0b388fbae632.png" width="100px" height="125px" title="Todo App"/>
 <img src="https://cloud.githubusercontent.com/assets/16755871/19643351/1fcd61b8-99ea-11e6-8159-bb67ee1d50f6.png" width="100px" height="125px" title="Server"/>
 <img src="https://cloud.githubusercontent.com/assets/16755871/19643394/6019084e-99ea-11e6-9e50-bb198e6637d2.png" width="100px" height="125px" title="Web Server"/>
 
